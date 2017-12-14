@@ -1,4 +1,5 @@
 package Service;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -10,6 +11,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/12/14 0014.
  */
+@EnableAutoConfiguration
 @Service
 public class MysqlSersers {
     public List<Map<String, Object>> RetrunList(ResultSet resultSet) throws  Exception{
