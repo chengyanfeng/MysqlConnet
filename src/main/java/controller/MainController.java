@@ -16,6 +16,7 @@ import Service.MysqlSersers;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,16 +29,13 @@ public class MainController {
 
     @RequestMapping("/")
   public  String mysql() {
-     String rlist="";
+     List<Map<String,Object>> rlist= new ArrayList<Map<String,Object>>();
         Mysqlconnect mysqlconnect = new Mysqlconnect("call mytest(0)");
         ResultSet resultSet=null;
 
         try {
           resultSet = mysqlconnect.pst.executeQuery();
-            List<Map<String, Object>> maps = mysqlSersers.RetrunList(resultSet);
-           rlist= maps.toString();
-            System.out.print(rlist);
-            System.out.print("dfadfaf");
+             rlist = mysqlSersers.RetrunList(resultSet);
             resultSet.close();//关闭连接
             mysqlconnect.close();//关闭连接
         } catch (Exception e) {
