@@ -28,9 +28,10 @@ public class MainController {
    MysqlSersers mysqlSersers;
 
     @RequestMapping("/")
-  public  String mysql() {
+  public  String mysql(@RequestParam(required = false,defaultValue = "0") String id ) {
      List<Map<String,Object>> rlist= new ArrayList<Map<String,Object>>();
-        Mysqlconnect mysqlconnect = new Mysqlconnect("call mytest(0)");
+        String sql="call mytest("+id+")";
+        Mysqlconnect mysqlconnect = new Mysqlconnect(sql);
         ResultSet resultSet=null;
 
         try {
