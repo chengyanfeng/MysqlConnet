@@ -9,7 +9,7 @@ import java.sql.*;
 /**
  * Created by Administrator on 2017/12/14 0014.
  */
-@EnableAutoConfiguration
+
 public class Mysqlconnect {
     public static final String url = "jdbc:mysql://127.0.0.1/test";
     public static final String name = "com.mysql.jdbc.Driver";
