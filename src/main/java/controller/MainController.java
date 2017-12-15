@@ -40,8 +40,6 @@ public class MainController {
             e.printStackTrace();
 
         }
-
-
         return gson.toJson(rlist);
 
     }
@@ -51,7 +49,6 @@ public class MainController {
         String sql="call mytest("+id+")";
         Mysqlconnect mysqlconnect = new Mysqlconnect(sql);
         ResultSet resultSet=null;
-
         try {
             resultSet = mysqlconnect.pst.executeQuery();
             rlist = mysqlSersers.RetrunList(resultSet);
